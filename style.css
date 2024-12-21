@@ -1,0 +1,106 @@
+/* General Body Styling */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1C1C1C;
+    color: white;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Flash Effect */
+#flash {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+    animation: fade-out 0.8s ease-out forwards; /* Fades out smoothly */
+    pointer-events: none;
+}
+
+/* Flash Animation */
+@keyframes fade-out {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Main Content Hidden During Flash */
+body.hidden {
+    visibility: hidden;
+}
+
+body.show-content {
+    visibility: visible;
+    overflow: hidden; /* Prevent scrolling when content is shown */
+}
+
+/* Center Image */
+.center-image {
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 1000px;
+    height: 600px;
+    object-fit: contain;
+}
+
+/* Dollar Rain */
+.dollar-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.dollar {
+    position: absolute;
+    color: green;
+    font-weight: bold;
+    font-size: 20px;
+    animation: fall linear infinite;
+    opacity: 0.9;
+}
+
+/* Falling Animation */
+@keyframes fall {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+/* Footer Styling */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1C1C1C; /* Same as body background */
+}
+
+.footer-left a, .footer-right a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-left .icon, .footer-right .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    filter: brightness(0) invert(1); /* Make SVG icons white */
+}
+
