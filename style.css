@@ -47,7 +47,67 @@ body.show-content {
     object-fit: contain;
 }
 
-/* Dollar Rain */
+/* New Year Text */
+.new-year-text {
+    position: absolute;
+    top: 70%; /* Set this to position the text below the image */
+    left: 50%;
+    transform: translateX(-50%); /* Center the text horizontally */
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    z-index: 2000; /* Make sure it's above the content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: colorChange 5s linear infinite; /* Add color-changing animation */
+}
+
+/* Emoji Styling */
+.emoji {
+    font-size: 50px; /* Larger size for emoji */
+    margin: 0 10px; /* Add space around emojis */
+    animation: bounce 2s ease-in-out infinite; /* Bounce effect for emoji */
+}
+
+/* Text Styling */
+.text {
+    font-size: 40px;
+    font-weight: bold;
+    animation: colorChange 5s linear infinite; /* Color-changing animation for text */
+}
+
+/* Color-changing Animation */
+@keyframes colorChange {
+    0% {
+        color: #ffb3b3; /* Light Pink */
+    }
+    25% {
+        color: #ffcc99; /* Light Peach */
+    }
+    50% {
+        color: #b3ffb3; /* Light Green */
+    }
+    75% {
+        color: #cce0ff; /* Light Blue */
+    }
+    100% {
+        color: #ffb3b3; /* Return to Light Pink */
+    }
+}
+
+/* Bounce Animation for Emojis */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); /* Start and end at normal position */
+    }
+    50% {
+        transform: translateY(-10px); /* Bounce up */
+    }
+}
+
+/* Dollar Rain (After 45 seconds) */
 .dollar-rain {
     position: absolute;
     top: 0;
@@ -60,20 +120,40 @@ body.show-content {
 
 .dollar {
     position: absolute;
-    color: green;
-    font-weight: bold;
-    font-size: 20px;
+    color: green; /* Dollar color */
+    font-size: 25px; /* Dollar size */
     animation: fall linear infinite;
     opacity: 0.9;
+    top: -10%; /* Start at the top of the screen */
 }
 
 /* Falling Animation */
 @keyframes fall {
     0% {
-        transform: translateY(-100%);
+        transform: translateY(0); /* Start at the top of the screen */
     }
     100% {
-        transform: translateY(100vh);
+        transform: translateY(100vh); /* Fall to the bottom of the screen */
+    }
+}
+
+/* Snowflakes (Initially) */
+.snowflake {
+    position: absolute;
+    color: white; /* Snowflake color */
+    font-size: 25px; /* Adjust snowflake size */
+    animation: fall linear infinite;
+    opacity: 0.8;
+    top: -10%; /* Start above the viewport */
+}
+
+/* Falling Snowflakes */
+@keyframes fall {
+    0% {
+        transform: translateY(0); /* Start at the top of the screen */
+    }
+    100% {
+        transform: translateY(100vh); /* Fall to the bottom of the screen */
     }
 }
 
@@ -87,6 +167,7 @@ footer {
     align-items: center;
     padding: 10px 20px;
     background-color: #1C1C1C; /* Same as body background */
+    box-sizing: border-box;
 }
 
 .footer-left a, .footer-right a {
@@ -95,6 +176,9 @@ footer {
     font-size: 16px;
     display: flex;
     align-items: center;
+    white-space: nowrap; /* Prevent the text from breaking to the next line */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
 }
 
 .footer-left .icon, .footer-right .icon {
@@ -102,5 +186,28 @@ footer {
     height: 20px;
     margin-right: 8px;
     filter: brightness(0) invert(1); /* Make SVG icons white */
+}
+
+/* Snowflakes Animation */
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.snowflakes .snowflake {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.8;
+    animation: fall 10s linear infinite;
+}
+
+@keyframes snow {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
 }
 
