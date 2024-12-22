@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello SplikZerys!</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3SY43GP2BL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        // Идентификатор Google Analytics
+        gtag('config', 'G-3SY43GP2BL');
+    </script>
 </head>
 <body>
     <!-- Flash Effect -->
@@ -13,7 +24,7 @@
     <!-- Main Content -->
     <div class="main-content">
         <img src="HyD.png" alt="Main Image" class="center-image">
-        
+
         <!-- Text -->
         <div class="new-year-text">
             <span class="emoji">🎄</span>
@@ -34,12 +45,16 @@
     <!-- Footer -->
     <footer>
         <div class="footer-left">
-            <a href="https://www.youtube.com/@pobednay_bulochka" target="_blank">
+            <a href="https://www.youtube.com/@pobednay_bulochka" 
+               target="_blank" 
+               onclick="gtag('event', 'click', {'event_category': 'Social Links', 'event_label': 'YouTube'});">
                 <img src="YouTube.svg" alt="YouTube Logo" class="icon"> YouTube
             </a>
         </div>
         <div class="footer-right">
-            <a href="https://discord.gg/tjzPHcBhMp" target="_blank">
+            <a href="https://discord.gg/tjzPHcBhMp" 
+               target="_blank" 
+               onclick="gtag('event', 'click', {'event_category': 'Social Links', 'event_label': 'Discord'});">
                 <img src="Discordlogo.svg" alt="Discord Logo" class="icon"> Discord
             </a>
         </div>
@@ -47,6 +62,4 @@
 
     <script src="script.js"></script>
 </body>
-<!-- yu -->
 </html>
-
