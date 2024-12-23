@@ -65,5 +65,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 });
-
-// Stop
