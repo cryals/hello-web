@@ -188,6 +188,34 @@ footer {
     filter: brightness(0) invert(1); /* Make SVG icons white */
 }
 
+/* Center the Button in Footer */
+.footer-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Allow the center to take up available space */
+}
+
+/* Button Styling */
+.iksweb {
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #ffffff;
+    background: #354251;
+    border-radius: 0px;
+    border: 2px solid #47515c;
+}
+
+.iksweb:hover {
+    background: #47515c;
+    color: #ffffff;
+    border: 2px solid #354251;
+    transition: all 0.2s ease;
+}
+
 /* Snowflakes Animation */
 .snowflakes {
     position: absolute;
@@ -206,9 +234,3 @@ footer {
     animation: fall 10s linear infinite;
 }
 
-@keyframes snow {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100vh); }
-}
-
-/* e */
